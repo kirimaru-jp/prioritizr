@@ -152,7 +152,7 @@ methods::setMethod(
     # assert arguments are valid
     assertthat::assert_that(
       inherits(x, "sf"), inherits(y, "sf"),
-      sf::st_crs(x) == sf::st_crs(y),
+      # sf::st_crs(x) == sf::st_crs(y),
       intersecting_extents(x, y))
     # find out which units in x intersect with any units in y
     int1 <- sf::st_intersects(x, y, sparse = TRUE)
@@ -184,7 +184,7 @@ methods::setMethod(
     assertthat::assert_that(
       inherits(x, "Raster"), inherits(y, "sf"),
       isTRUE(raster::nlayers(x) == 1),
-      sf::st_crs(x@crs) == sf::st_crs(y),
+      # sf::st_crs(x@crs) == sf::st_crs(y),
       intersecting_extents(x, y))
     intersecting_units(x = x,  y = fasterize::fasterize(y, x, field = NULL))
   }
