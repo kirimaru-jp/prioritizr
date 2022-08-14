@@ -603,7 +603,7 @@ methods::setMethod(
       length(x) > 0,
       all(colSums(!is.na(as.matrix(x@data[, cost_column, drop = FALSE])),
                   na.rm = TRUE) > 0),
-      sf::st_crs(x@proj4string) == sf::st_crs(features[[1]]@crs),
+      # sf::st_crs(x@proj4string) == sf::st_crs(features[[1]]@crs),
       intersecting_extents(x, features[[1]]))
       verify_that(
         all(colSums(as.matrix(x@data[, cost_column, drop = FALSE]) < 0,
